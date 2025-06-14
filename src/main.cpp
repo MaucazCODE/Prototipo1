@@ -26,16 +26,16 @@ void loop() {
 //vuelta de primera rueda
   digitalWrite(negro1,HIGH); 
   delay(tiempo);
-  digitalWrite(amarillo1,LOW);  
+  digitalWrite(amarillo1,HIGH);  
   delay(tiempo);
-  digitalWrite(rojo1,LOW);  
+  digitalWrite(rojo1,HIGH);  
   delay(tiempo);
 
 //vuelta de 2da rueda
   digitalWrite(negro2,HIGH); 
   delay(tiempo);
-  digitalWrite(amarillo2,LOW);  
+  digitalWrite(amarillo2,HIGH);  
   delay(tiempo);
-  digitalWrite(rojo2,LOW);
+  digitalWrite(rojo2,HIGH);
   delay(tiempo);  
 }
