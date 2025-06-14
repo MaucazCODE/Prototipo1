@@ -1,31 +1,41 @@
 #include <EEPROM.h>
 
-const int EEPROM_SIZE = 512; // Define el tamaño de la EEPROM (ajusta según tu necesidad)
+//const int EEPROM_SIZE = 512; // Define el tamaño de la EEPROM (ajusta según tu necesidad)
+
+// Declaracion de pines
+int negro1 = 12;
+int amarillo1=14;
+int rojo1=27;
+int negro2 = 28;
+int amarillo2=25;
+int rojo2=33;
+
+int tiempo = 2000;
 
 void setup() {
-  Serial.begin(115200);
-  
-  // Inicia la EEPROM con el tamaño definido
-  if (!EEPROM.begin(EEPROM_SIZE)) {
-    Serial.println("Error al inicializar la EEPROM");
-    return;
-  }
-
-  // Escribe ceros en toda la EEPROM
-  for (int i = 0; i < EEPROM_SIZE; i++) {
-    EEPROM.write(i, 0); // Escribe 1 en cada byte de la EEPROM
-  }
-
-  // Guarda los cambios
-  if (EEPROM.commit()) {
-    Serial.println("EEPROM limpiada exitosamente");
-  } else {
-    Serial.println("Error al limpiar EEPROM");
-  }
-
-}
+  pinMode(negro1,OUTPUT);
+  pinMode(amarillo1,OUTPUT);
+  pinMode(rojo1,OUTPUT);
+  pinMode(negro2,OUTPUT);
+  pinMode(amarillo2,OUTPUT);
+  pinMode(rojo2,OUTPUT);
+} 
 
 void loop() {
-  // No se necesita hacer nada en el loop
-  //probando cambios por github 1 2 3
+
+//vuelta de primera rueda
+  digitalWrite(negro1,HIGH); 
+  delay(tiempo);
+  digitalWrite(amarillo1,LOW);  
+  delay(tiempo);
+  digitalWrite(rojo1,LOW);  
+  delay(tiempo);
+
+//vuelta de 2da rueda
+  digitalWrite(negro2,HIGH); 
+  delay(tiempo);
+  digitalWrite(amarillo2,LOW);  
+  delay(tiempo);
+  digitalWrite(rojo2,LOW);
+  delay(tiempo);  
 }
